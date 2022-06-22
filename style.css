@@ -1,24 +1,36 @@
-body {background: rgb(198,38,73);
-    background: linear-gradient(130deg, rgba(198,38,73,1) 0%, rgba(138,150,210,0.989233193277311) 61%, rgba(0,212,255,1) 100%);
-color:rgb(218, 218, 80);
+body {
+    background: rgb(239, 243, 6);
 
 }
 h1 {
+    padding: 50px;
     text-align:center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgb(0, 255, 157);
+    color: rgb(62, 19, 219);
 }
 #container {
+    padding-bottom: 30px;
     text-align:center;
     margin-left: auto;
     margin-right: auto;
     display: block;
 }
+#label {
+    font: bold 20px cursive;
+}
+
+#task {
+border: 2px solid;
+line-height: 33px;
+}
+
+#b1 {
+    font-family: cursive;
+}
 #tasklist {
-    text-align:center;
     margin-left:auto;
     margin-right: auto;
-    display: block;
+    display: flex;
 }
 
 .fa-solid {
@@ -30,19 +42,13 @@ h1 {
 #check {
     flex:1;
 }
-.entry {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: space-around;
-}
+
 .entryli {
-    width: 5em;
+    padding: 5px;
+    justify-content: center;
+    text-align: center;
     display: block;
-    justify-content: space-around;
-    flex: 1;
-
-
+    
 
 }
 .strike {
