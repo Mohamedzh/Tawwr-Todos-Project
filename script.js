@@ -64,7 +64,7 @@ function buttons(e){
         item.parentElement.classList.toggle("strike");
     };
     if (item.id === 'del'){
-        item.parentElement.remove();
+        (item.parentElement).parentElement.remove();
         let i = listarray.indexOf(item.parentElement.innerText);
         listarray.splice(i, 1);
         
