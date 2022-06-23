@@ -3,6 +3,7 @@ const list = document.getElementById("tasklist")
 let listarray;
 
 
+
 b1.addEventListener('click', todos);
 
 //retrive from local storage
@@ -15,10 +16,10 @@ listarray = [];}else{
     while (i < listarray.length){
 
         
-            list.innerHTML += `<li class="entryli" class="list-group-item active">${listarray[i]}
-            <button type="button" id = "check"><i class="fa-solid fa-square-check"></i></button>
+            list.innerHTML += `<div><button type="button" id = "check"><i class="fa-solid fa-square-check"></i></button>
+            <li class="entryli" class="list-group-item active">${listarray[i]}
             <button type = "button" id = "del"><i class="fa-solid fa-trash-can"></i></button>
-            </li>`;
+            </li></div>`;
             i += 1;
     };
     console.log(listarray);
@@ -28,21 +29,28 @@ listarray = [];}else{
 function todos(e) {
     e.preventDefault();
     var newtask = document.getElementById("task").value;
-    if (newtask == "" || newtask == "Write your task here") {
+    var newdate = document.getElementById("taskdate").value;
+    if (newtask == "" ) {
+        //Use || if conflict due to Placeholder
         alert("Empty entry");
-        document.getElementById("container").reset();
+        //document.getElementById("task").value=""; 
+    } else if (newdate =="") {
+        alert("Empty date");
     } else {
 
-var newTa = `<li class="entryli" class="list-group-item active">${newtask}
-<button type="button" id = "check"><i class="fa-solid fa-square-check"></i></button>
+var newTa = `<div><button type="button" id = "check"><i class="fa-solid fa-square-check"></i></button>
+<li class="entryli" class="list-group-item active">${newtask} on ${newdate}
 <button type = "button" id = "del"><i class="fa-solid fa-trash-can"></i></button>
-</li>`;
+</li></div>`;
     list.innerHTML += newTa;
-    listarray.push(newtask);
+    var completetask = newtask +" on " + newdate
+    listarray.push(completetask);
     localStorage.setItem('mylist', JSON.stringify(listarray));
 
     
-    document.getElementById("container").reset();
+    document.getElementById("task").value="";
+    document.getElementById("taskdate").value="";
+
     console.log(listarray);
 }}
 
@@ -51,7 +59,7 @@ var newTa = `<li class="entryli" class="list-group-item active">${newtask}
 list.addEventListener('click', buttons);
 function buttons(e){
     const item = e.target;
-
+    console.log(item.parentElement);
     if (item.id === 'check'){
         item.parentElement.classList.toggle("strike");
     };

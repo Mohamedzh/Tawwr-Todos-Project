@@ -1,19 +1,25 @@
 body {
-    background: rgb(239, 243, 6);
+    background-image: url(Stickynote.png);
+    background-position-x: center;
+    background-position-y: 300px; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(238, 238, 218);
 
 }
 h1 {
     padding: 50px;
     text-align:center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: rgb(62, 19, 219);
 }
 #container {
-    padding-bottom: 30px;
-    text-align:center;
     margin-left: auto;
     margin-right: auto;
-    display: block;
+    width: 1200px;
+    padding-top: 50px;
+    padding-bottom: 350px;
+    display: flex;
 }
 #label {
     font: bold 20px cursive;
@@ -25,32 +31,56 @@ line-height: 33px;
 }
 
 #b1 {
-    font-family: cursive;
+    font-family: sans-serif;
 }
 #tasklist {
-    margin-left:auto;
-    margin-right: auto;
-    display: flex;
+    display: list-item;
+    padding-bottom: 300px;
 }
 
 .fa-solid {
     pointer-events: none;
 }
+
 #del {
-    flex: 1;
+margin: 1px;
 }
+#del:hover {
+    background-color: black;
+    color: rgb(225, 230, 230);
+    transition: 0.5s;
+    }
 #check {
-    flex:1;
+    margin: 1px;
+    display: flex;
+    float: left;
+    margin-left: 75px;
+    font-size: 2rem;
+}
+#check:hover {
+background-color: black;
+color: rgb(225, 230, 230);
+transition: 0.5s;
 }
 
 .entryli {
-    padding: 5px;
-    justify-content: center;
+    padding: 1px;
+    padding-left: 10px;
+    margin: 2px;
+    border: 1px solid;
     text-align: center;
-    display: block;
-    
+    margin-left: 100px;
+    width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    font: bold 1.5rem Verdana, Geneva, Tahoma, sans-serif;
 
 }
 .strike {
-    text-decoration: line-through;
+    text-decoration: line-through red 0.2rem;
+}
+#title {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
 }
